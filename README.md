@@ -1,0 +1,2 @@
+# mechanic
+qt quickview project 
