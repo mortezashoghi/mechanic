@@ -13,7 +13,6 @@
         <file>icon/menu-2-48.png</file>
         <file>icon/menu-2-64.png</file>
         <file>deployment.pri</file>
-        <file>Mrt-Ui.pro</file>
         <file>qml.qrc</file>
         <file>contacts.qml</file>
         <file>xmlexam.xml</file>
@@ -42,7 +41,6 @@
         <file>icon/app.png</file>
         <file>icon/app0.png</file>
         <file>icon/app2.png</file>
-        <file>images/sasat.gif</file>
         <file>database.cpp</file>
         <file>database.h</file>
         <file>databasesqlite.cpp</file>
