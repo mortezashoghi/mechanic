@@ -7,7 +7,7 @@
 #include <QtDebug>
 #include <QFile>
 
-Credential::Credential(QObject *parent) : QObject(parent),f_act_code("1234"),f_email("morteza@@@@@@shoghiiiii")
+Credential::Credential(QObject *parent) : QObject(parent),f_act_code("1234"),f_email("morteza.sh@gmail.com")
 {
 
 
@@ -47,7 +47,6 @@ void Credential::checkconfiguration()
    // qWarning()<<root;
     //qWarning() << root.value("email").toString();
     QString qstr=root.value("email").toString();
-    qWarning()<<"morteza shoghi ha  email "<<qstr << f_act_code << f_email;
     //emit checkauth(qstr);
     // return qstr;
 }

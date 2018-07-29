@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
         dataList.append("Item 4");
 */
 
-    //check user/application status
 
 Credential crd;
 crd.createconfigfile();
@@ -50,9 +49,9 @@ data=datadb.getalllist();
 
 abstractmodel abs;
 
-/*abs.addData(abdata(0,"morteza2","shoghi0"));
-abs.addData(abdata(1,"morteza3","shoghi0"));
-abs.addData(abdata(2,"morteza1","shoghi0"));
+/*abs.addData(abdata(0,"x","y"));
+abs.addData(abdata(1,"x1","y1"));
+abs.addData(abdata(2,"x2","y2"));
 */
 foreach (const QStringList &var, data) {
     //qWarning() << var[0];

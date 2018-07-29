@@ -29,7 +29,6 @@ void database::connectdb(){
 
 
 void database::geterrorone(QString s){
-    qWarning()<<"salam shoghi kefuuuuun navvvvvvvar : "<<s;
     datalist.clear();
     emit getlst(s);
 }
@@ -60,9 +59,7 @@ QString database::showall(){
     closdb();
     emit getjsn(json.toJson());
     return json.toJson();
-    //qWarning()<<"salam shoghi kefuuuuun : "<<s;
     //emit getlst(s);
-    //return "jhjh";
 }
 
  QList<QObject*> database::getall(){
@@ -98,7 +95,6 @@ QString database::showall(){
           }
       }
      //qWarning()<<datalist;
-     // emit findsignal("shoghi");
       return  datalist;
 
  }
@@ -127,7 +123,6 @@ QString database::showall(){
      }
 
 
- //qWarning()<<datalist.size();
  //emit searchitem();
      return lst;
 

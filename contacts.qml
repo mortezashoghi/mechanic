@@ -57,9 +57,8 @@ Item {
                         anchors.fill: parent
                         onClicked: {
 
-                            // errors.reterrors("hi shoghi")
-                            // errors.geterrorone("gooodkk")
-                            errors.showall("shoghi")
+                            // errors.geterrorone("test")
+                            errors.showall("test msg")
                         }
 
                     }
@@ -74,7 +73,7 @@ Item {
                 Text {
                     id: txtswp
                     anchors.centerIn: parent
-                    text: qsTr("This is new swap mode")
+                    text: qsTr("This is new swipe mode")
                     anchors.top:imgtxt.bottom
                 }
 
@@ -88,7 +87,7 @@ Item {
         Label{
 
             id: txtmain
-            text: qsTr("goodmorning")
+            text: qsTr("test message")
         }
     }
    /* Connections{
