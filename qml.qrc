@@ -41,8 +41,6 @@
         <file>icon/app.png</file>
         <file>icon/app0.png</file>
         <file>icon/app2.png</file>
-        <file>database.cpp</file>
-        <file>database.h</file>
         <file>databasesqlite.cpp</file>
         <file>databasesqlite.h</file>
         <file>errlist.cpp</file>
