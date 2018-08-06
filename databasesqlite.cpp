@@ -122,7 +122,6 @@ QString database::showall(){
          }
      }
 
-
  //emit searchitem();
      return lst;
 
