@@ -7,6 +7,7 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDebug>
+#include <QDir>
 #include "abstractmodel.h"
 
 
@@ -36,7 +37,7 @@ public slots:
 
     bool opendb(){
         mysqldb =QSqlDatabase::addDatabase("QSQLITE");
-        mysqldb.setDatabaseName("./pop.db");
+        mysqldb.setDatabaseName(QDir::currentPath()+"/pop.db");
         if(mysqldb.open()){
           // qWarning()<<"connected to dbb ";
             return true;
