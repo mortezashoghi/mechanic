@@ -83,14 +83,13 @@ qmlRegisterType<Credential>("auth",1,0,"Credential");
 
     QQmlApplicationEngine engine;
     errlist errors;
-
     QQmlContext * ctnx=engine.rootContext();
-    //ctnx->setContextProperty("datadb",&datadb);
-   // ctnx->setContextProperty("myModel", &dataab);
-  //  ctnx->setContextProperty("myModel",QVariant::fromValue(data));
-  ctnx->setContextProperty("myModel",&flt);
+   // ctnx->setContextProperty("datadb",&datadb);
+    // ctnx->setContextProperty("myModel", &dataab);
+    //  ctnx->setContextProperty("myModel",QVariant::fromValue(data));
+     ctnx->setContextProperty("myModel",&flt);
 
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/contacts.qml")));
     //qDebug() << engine.offlineStoragePath();
 
     return app.exec();

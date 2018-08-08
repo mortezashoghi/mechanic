@@ -47,7 +47,7 @@ protected:
 
 private:
 
-   // QStringList pr_title;
+ // QStringList pr_title;
  //QList<QString> pr_title;
  QList<abdata> datalst;
 };
