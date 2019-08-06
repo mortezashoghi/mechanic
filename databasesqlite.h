@@ -38,6 +38,7 @@ public slots:
     bool opendb(){
         mysqldb =QSqlDatabase::addDatabase("QSQLITE");
         mysqldb.setDatabaseName(QDir::currentPath()+"/pop.db");
+
         if(mysqldb.open()){
           // qWarning()<<"connected to dbb ";
             return true;

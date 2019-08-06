@@ -1,14 +1,16 @@
-import QtQuick 2.7
+import QtQuick 2.11
 import QtQuick.Layouts 1.3
-import QtQuick.Window 2.2
-import QtQuick.Controls 2.0
+import QtQuick.Window 2.11
+import QtQuick.Controls 2.4
 import QtQuick.Controls.Styles 1.4
-import QtQuick.Controls.Styles 1.1
+import QtQuick.Controls.Styles 1.4
 import QtQuick.Dialogs 1.2
-import QtQuick.Controls.Material 2.0
-import QtQuick.Controls.Universal 2.0
+import QtQuick.Controls.Material 2.3
+import QtQuick.Controls.Universal 2.3
 import Qt.labs.settings 1.0
 import QtQuick.XmlListModel 2.0
+//import QtQuick.qtgraphicaleffect 1.0
+
 import "icon.js" as Icon
 
 import auth 1.0
@@ -33,7 +35,7 @@ ApplicationWindow {
         else if(Screen.pixelDensity<240 && Screen.pixelDensity>160)
 
             dencity="m"
-        else if(Screen.pixelDensity>240 && Screen.pixelDensity>160)
+        else
             dencity="b"
     }
 
@@ -86,16 +88,17 @@ ApplicationWindow {
                     anchors.fill: parent
                     fillMode: Image.PreserveAspectFit
                     source:{
-                        // if(Screen.pixelDensity<160)
+                         if(dencity=="s")
                         "qrc:/icon/logout-32.png"
-                        //  else if(Screen.pixelDensity>160 && Screen.pixelDensity<240 )
-                        //   "qrc:/icon/logout-48.png"
-                        // else if(Screen.pixelDensity>240)
-                        //   "qrc:/icon/logout-48.png"
+                          else if(dencity=="m" )
+                           "qrc:/icon/logout-48.png"
+                         else
+                           "qrc:/icon/logout-48.png"
                     }
                     //  sourceSize.width: head.width/10
                     //  sourceSize.height: head.height
                 }
+
                 onClicked: msgBox.open();
 
             }
@@ -112,13 +115,13 @@ ApplicationWindow {
                     id: menu
                     anchors.fill: parent
                     fillMode: Image.PreserveAspectFit
-                    source: {
-                        if(Screen.pixelDensity<160)
-                            "qrc:/icon/menu-2-32.png"
-                        else if(Screen.pixelDensity>160 && Screen.pixelDensity<240)
-                            "qrc:/icon/menu-2-48.png"
-                        if(Screen.pixelDensity>240)
-                            "qrc:/icon/menu-2-64.png"
+                    source:{
+                        if(dencity=="s")
+                       "qrc:/icon/menu-2-32.png"
+                         else if(dencity=="m" )
+                          "qrc:/icon/menu-2-48.png"
+                        else
+                          "qrc:/icon/menu-2-48.png"
                     }
                     // sourceSize.width: head.width/10
                     // sourceSize.height: head.height
@@ -211,7 +214,6 @@ ApplicationWindow {
     }
 
     MessageDialog{
-
         id: msgBox
         title: "Quit"
         text: qsTr("You want Exit!")

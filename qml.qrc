@@ -55,5 +55,14 @@
         <file>font/fontawesome-webfont.ttf</file>
         <file>icon/previous.png</file>
         <file>icon/reply.png</file>
+        <file>abstractmodel.cpp</file>
+        <file>abstractmodel.h</file>
+        <file>Credential.cpp</file>
+        <file>credential.cpp</file>
+        <file>credential.h</file>
+        <file>database.cpp</file>
+        <file>database.h</file>
+        <file>filter.cpp</file>
+        <file>filter.h</file>
     </qresource>
 </RCC>

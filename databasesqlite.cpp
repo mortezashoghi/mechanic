@@ -18,8 +18,10 @@ database::database(QObject *parent) : QObject(parent)
 void database::connectdb(){
 
     if(opendb()){
+        QSqlQuery query;
+        //query.prepare( "SELECT * FROM descriptors" );
 
-       // qWarning()<<"connected.....";
+        qWarning()<<"connected.....";
 
     }else{
         qWarning()<<"Not connected.....";
@@ -40,7 +42,6 @@ QString database::showall(){
     QSqlQuery query;
     QJsonDocument  json;
     QJsonArray     recordsArray;
-
 
     //query="select * from peron";
 
@@ -66,11 +67,12 @@ QString database::showall(){
     connectdb();
     QSqlQuery query;
    // lstmodel *datamod;
+
     if(query.exec("select id,title,solution from solves")){
         while (query.next()) {
 
             datalist.append(new lstmodel(query.value(0).toInt(),query.value(1).toString(),query.value(2).toString()));
-           // qWarning()<<query.value(2).toString();
+            qWarning()<<query.value(2).toString();
         }
     }
 
@@ -85,6 +87,7 @@ QString database::showall(){
       connectdb();
       QSqlQuery query;
      // lstmodel *datamod;
+
       datalist.clear();
       QString sqlq="select * from solves where title LIKE '%"+tofind+"%'";
       if(query.exec(sqlq)){
@@ -106,9 +109,9 @@ QString database::showall(){
      QSqlQuery query;
      QVector<QStringList> lst;
 
-     if(query.exec("select id,title,solution from solves")){
+     if(query.exec("select * from solves")){
+         //qWarning()<<"jjjjjjjjjjjjjjjjjjjjjjjjjj";
          while (query.next()) {
-
              QSqlRecord record = query.record();
              QStringList tmp;
              for(int i=0; i < record.count(); i++)
@@ -116,9 +119,8 @@ QString database::showall(){
                  tmp << record.value(i).toString();
              }
              lst.append(tmp);
-
            //  datalist.append(new lstmodel(query.value(0).toInt(),query.value(1).toString(),query.value(2).toString()));
-            // qWarning()<<query.value(2).toString();
+             qWarning()<< "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"  <<query.value(2).toString();
          }
      }
 

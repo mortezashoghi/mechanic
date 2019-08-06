@@ -42,6 +42,7 @@ database datadb;
 //QList<QObject*> data;
 QVector<QStringList> data;
 //data=datadb.searchitems("");
+QString strw="the";
 data=datadb.getalllist();
 //----------------
 
@@ -49,19 +50,20 @@ data=datadb.getalllist();
 
 abstractmodel abs;
 
-/*abs.addData(abdata(0,"x","y"));
-abs.addData(abdata(1,"x1","y1"));
-abs.addData(abdata(2,"x2","y2"));
-*/
+//abs.addData(abdata(0,"x","y"));
+//abs.addData(abdata(1,"x1","y1"));
+//abs.addData(abdata(2,"x2","y2"));
+
 foreach (const QStringList &var, data) {
     //qWarning() << var[0];
     int pid=var[0].toInt();
     abs.addData(abdata(pid,var[1],var[2]));
+    qWarning() << var[1];
 }
 filter flt;
 flt.setSourceModel(&abs);
 flt.setFilterRole(title);
-flt.setSortRole(title);
+//flt.setSortRole(title);
 
 
 
@@ -73,14 +75,10 @@ if (!style.isEmpty())
 else{
     QQuickStyle::setStyle(settings.value("style").toString());
 }
-
-
-
 //qml register type
 
-qmlRegisterType<Credential>("auth",1,0,"Credential");
+             qmlRegisterType<Credential>("auth",1,0,"Credential");
 //end qml register type
-
     QQmlApplicationEngine engine;
     errlist errors;
     QQmlContext * ctnx=engine.rootContext();
@@ -89,7 +87,7 @@ qmlRegisterType<Credential>("auth",1,0,"Credential");
     //  ctnx->setContextProperty("myModel",QVariant::fromValue(data));
      ctnx->setContextProperty("myModel",&flt);
 
-    engine.load(QUrl(QStringLiteral("qrc:/contacts.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     //qDebug() << engine.offlineStoragePath();
 
     return app.exec();
